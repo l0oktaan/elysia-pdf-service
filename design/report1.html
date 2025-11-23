@@ -15,7 +15,7 @@
       width: 794px;           /* A4 @ 96dpi */
       min-height: 1123px;     /* A4 @ 96dpi */
       margin: 10px auto;
-      padding: 20mm;
+      padding: 10mm 15mm 10mm 15mm;
       background: #fff;
       box-shadow: 0 0 5px rgba(0,0,0,0.5);
       box-sizing: border-box;
@@ -45,9 +45,15 @@
       }
     }
 
+    .report-header {
+      text-align: center;
+      font-size: 14px;
+      font-weight: normal;
+      margin-bottom: 4mm;
+    }
     .report-title {
       text-align: center;
-      font-size: 22px;
+      font-size: 18px;
       font-weight: bold;
       margin-bottom: 4mm;
     }
@@ -120,82 +126,73 @@
     .signature-label {
       margin-top: 3mm;
     }
+    .my-table td {    
+      padding: 0px;  
+      border: none;
+    }
+    .sub-table td {
+      
+      border: 1px solid #000;
+    }
   </style>
 </head>
 <body>
 
   <!-- หน้า 1 -->
   <div class="page">
-    <div class="report-title">รายงานสรุปเงินเดือนบุคลากร</div>
-    <div class="report-subtitle">ประจำเดือน พฤศจิกายน 2568 (หน้า 1/2)</div>
-
-    <div class="meta-row">
-      <div>หน่วยงาน: ศูนย์เทคโนโลยีสารสนเทศและการสื่อสาร</div>
-      <div>วันที่พิมพ์: 01/11/2568</div>
-    </div>
-
-    <table>
-      <thead>
-        <tr>
-          <th rowspan="2" style="width: 5%;">ลำดับ</th>
-          <th rowspan="2" style="width: 18%;">ชื่อ - สกุล</th>
-          <th rowspan="2" style="width: 18%;">ตำแหน่ง</th>
-          <th colspan="2" style="width: 22%;">หน่วยงาน</th>
-          <th colspan="3" style="width: 27%;">รายละเอียดการจ่าย</th>
-          <th rowspan="2" style="width: 10%;">หมายเหตุ</th>
-        </tr>
-        <tr>
-          <th>ฝ่าย/กลุ่ม</th>
-          <th>กอง/สำนัก</th>
-          <th>เงินเดือน</th>
-          <th>เงินเพิ่ม</th>
-          <th>ภาษี</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- แถวหน้า 1: ตัวอย่าง -->
-        <!-- สมมติหน้าละประมาณ 20 แถว -->
-        <!-- คุณเพิ่ม/ลดจำนวนแถวได้ตามต้องการให้พอดีกับความสูง A4 -->
-        <!-- ตัวอย่าง 10 แถว -->
-        <!-- 1 -->
-        <tr>
-          <td class="text-center">1</td>
-          <td>นาย กิตติศักดิ์ ใจดี</td>
-          <td>นักวิชาการคอมพิวเตอร์ปฏิบัติการ</td>
-          <td>กลุ่มพัฒนาระบบ 1</td>
-          <td>ศทส.</td>
-          <td class="text-right">35,000.00</td>
-          <td class="text-right">3,500.00</td>
-          <td class="text-right">1,200.00</td>
-          <td class="small">เลื่อนขั้น 1 ขั้น</td>
-        </tr>
-        <!-- 2 -->
-        <tr>
-          <td class="text-center">2</td>
-          <td>นางสาว สมหทัย พัฒนกิจ</td>
-          <td>จนท.การเงินและบัญชีชำนาญงาน</td>
-          <td>ฝ่ายบริหารทั่วไป</td>
-          <td>กองคลังและงบประมาณ</td>
-          <td class="text-right">29,500.00</td>
-          <td class="text-right">2,950.00</td>
-          <td class="text-right">950.00</td>
-          <td class="small">ค่าครองชีพชั่วคราว</td>
-        </tr>
-        <!-- 3 -->
-        <tr>
-          <td class="text-center">3</td>
-          <td>นาย ชาญชัย ตั้งใจดี</td>
-          <td>นักวิชาการคอมพิวเตอร์ชำนาญการ</td>
-          <td>กลุ่มพัฒนาระบบ 2</td>
-          <td>ศทส.</td>
-          <td class="text-right">42,000.00</td>
-          <td class="text-right">4,200.00</td>
-          <td class="text-right">1,600.00</td>
-          <td class="small">ปฏิบัติงานโครงการพิเศษ</td>
-        </tr>
-        <!-- ... เติมรายการให้เต็มหน้า 1 ... -->
-      </tbody>
+    <div class="report-header">ใช้ภายในกรมบัญชีกลางเท่านั้น</div>
+    <table style="border: none;">
+      <tr>
+        <td style="width: 20mm; border: none;" rowspan="2"><img src="https://www.cgd.go.th/images/logo_cgd.png" alt="Logo" style="height: 60px;"></td>
+        <td style="width: 20mm; border: none; text-align: right;">หมายเลขเอกสาร :</td>        
+        </td>
+        <td style="border: none;">FM-ISWT-010 </td>
+        <td style="width: 20mm;border: none;">เวอร์ชัน :  7.0 </td>
+      </tr>
+      <tr>       
+        <td style="text-align: right;border: none;">ชื่อเอกสาร :</td>
+        <td colspan="2" style="border: none;">แบบฟอร์มการร้องขอการเปลี่ยนแปลงหรือแก้ไขระบบ (Request for Change) </td>
+      </tr>
     </table>
+    <hr style="border: 0.1px solid #000; width: 100%; margin-top: 10px; margin-bottom: 15px;" />
+    <div class="report-title">แบบบันทึกการร้องขอการเปลี่ยนแปลงหรือแก้ไขระบบ (Request for Change)</div>
+    
+    <table class="my-table" style="width: 100%; border: none;">
+      <tr>
+        <td>
+          <table class="sub-table" style="width: 100%;">
+            <tr>
+              <td>วันที่ขอดำเนินการ</td>
+              <td></td>
+              <td>เลขที่ใบคำขอ</td>
+              <td></td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <table class="sub-table" style="width: 100%;">
+            <tr>
+              <td>ส่วนที่ 1 สำหรับผู้ร้องขอการเปลี่ยนแปลงหรือแก้ไขระบบ</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <table class="sub-table" style="width: 100%;">
+            <tr>
+              <td>ชื่อผู้ขอ</td>
+              <td></td>
+              <td>หน่วยงาน</td>
+              <td></td>
+            </tr>
+          </table>
+        </td>
+    </table>
+
+    
 
     <div style="margin-top: 4mm; font-size: 14px;">
       หมายเหตุ: หน้าต่อไปเป็นข้อมูลต่อเนื่องจากตารางนี้
