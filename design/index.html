@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <title>รายงานสรุปเงินเดือนบุคลากร (2 หน้า)</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #ccc;
+    }
+    @font-face {
+      font-family: 'THSarabunNew';
+      src: url('fonts/THSarabunNew.ttf') format('truetype');
+    }
+
+    /* กล่องจำลองกระดาษ A4 */
+    .page {
+      width: 794px;           /* A4 @ 96dpi */
+      min-height: 1123px;     /* A4 @ 96dpi */
+      margin: 10px auto;
+      padding: 10mm 15mm 10mm 15mm;
+      background: #fff;
+      box-shadow: 0 0 5px rgba(0,0,0,0.5);
+      box-sizing: border-box;
+      position: relative;
+      font-family: "THSarabunNew", Tahoma, sans-serif;
+      font-size: 16px;
+    }
+
+    /* เริ่มหน้าใหม่ตอนพิมพ์ */
+    .page-break {
+      page-break-before: always;
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+      .page {
+        margin: 0;
+        box-shadow: none;
+        width: auto;
+        min-height: auto;
+        page-break-after: always;
+      }
+      .page:last-child {
+        page-break-after: auto;
+      }
+    }
+
+    .report-header {
+      text-align: center;
+      font-size: 14px;
+      font-weight: normal;
+      margin-bottom: 4mm;
+    }
+    .report-title {
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 4mm;
+    }
+
+    .report-subtitle {
+      text-align: center;
+      font-size: 16px;
+      margin-bottom: 6mm;
+    }
+
+    .meta-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 4mm;
+      font-size: 15px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      border: 1px solid #000;
+      font-size: 17px;
+    }
+
+    thead th {
+      border: 1px solid #000;
+      padding: 3px 4px;
+      text-align: center;
+      vertical-align: middle;
+      background: #f0f0f0;
+    }
+
+    tbody td {
+      border: 1px solid #000;
+      padding: 2px 4px;
+      vertical-align: top;
+    }
+
+    tfoot td {
+      border: 1px solid #000;
+      padding: 3px 4px;
+      font-weight: bold;
+      background: #f9f9f9;
+    }
+
+    .text-center { text-align: center; }
+    .text-right { text-align: right; }
+    .small { font-size: 13px; }
+
+    .signature-section {
+      margin-top: 10mm;
+      display: flex;
+      justify-content: space-between;
+      font-size: 15px;
+    }
+
+    .signature-box {
+      width: 45%;
+      text-align: center;
+    }
+
+    .signature-line {
+      margin-top: 18mm;
+      border-top: 1px solid #000;
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .signature-label {
+      margin-top: 3mm;
+    }
+    .my-table td {    
+      padding: 0;
+      border: none;
+      vertical-align: middle;
+    }
+    .sub-table td {
+      padding: 2px 0 0 5px;  
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- หน้า 1 -->
+  <div class="page">
+    <div class="report-header">ใช้ภายในกรมบัญชีกลางเท่านั้น</div>
+    <table style="border: none;">
+      <tr>
+        <td style="width: 20mm; border: none;" rowspan="2"><img src="https://www.cgd.go.th/images/logo_cgd.png" alt="Logo" style="height: 60px;"></td>
+        <td style="width: 25mm; border: none; text-align: right;">หมายเลขเอกสาร :</td>        
+        </td>
+        <td style="border: none;">FM-ISWT-010 </td>
+        <td style="width: 20mm;border: none;">เวอร์ชัน :  7.0 </td>
+      </tr>
+      <tr>       
+        <td style="text-align: right;border: none;">ชื่อเอกสาร :</td>
+        <td colspan="2" style="border: none;">แบบฟอร์มการร้องขอการเปลี่ยนแปลงหรือแก้ไขระบบ (Request for Change) </td>
+      </tr>
+    </table>
+    <hr style="border: 0.1px solid #000; width: 100%; margin-top: 10px; margin-bottom: 15px;" />
+    <div class="report-title">แบบบันทึกการร้องขอการเปลี่ยนแปลงหรือแก้ไขระบบ (Request for Change)</div>
+    
+    <table class="my-table" style="width: 100%; border: none;">
+      <tr>
+        <td>
+          <table class="sub-table" style="width: 100%;">
+            <tr>
+              <td style="text-align:left; width:100px;">วันที่ขอดำเนินการ</td>
+              <td style="text-align:left; width:250px;"></td>
+              <td style="text-align:left; width:100px;">เลขที่ใบคำขอ</td>
+              <td style="text-align:left;"></td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <table class="sub-table" style="width: 100%;">
+            <tr>
+              <td>ส่วนที่ 1 สำหรับผู้ร้องขอการเปลี่ยนแปลงหรือแก้ไขระบบ</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <table class="sub-table" style="width: 100%;">
+            <tr>
+              <td style="text-align:left; width:80px;">ชื่อ-นามสกุล</td>
+              <td style="text-align:left; width:220px;"></td>
+              <td style="text-align:left; width:50px;">หน่วยงาน</td>
+              <td style="text-align:left; width:180px;"></td>
+              <td style="text-align:left; width:40px;">โทร.</td>
+              <td></td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <table class="sub-table" style="width: 100%;">
+            <tr>
+              <td>รายละเอียดของการเปลี่ยนแปลงหรือแก้ไขระบบ</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <table class="sub-table" style="width: 100%;">
+            <tr>
+              <td style="text-align:left; width:80px;">เรื่อง</td>
+              <td style="text-align:left;"></td>              
+            </tr>
+          </table>
+        </td>
+      </tr>
+       <tr>
+        <td>
+          <table class="sub-table" style="width: 100%;">
+            <tr>
+              <td rowspan="4" style="text-align:left; width:80px; vertical-align: top;">รายละเอียด</td>
+              <td style="text-align:left;">t</td>              
+            </tr>
+            <tr>
+              <td>t</td>
+            </tr>
+             <tr>
+              <td>t</td>
+            </tr>
+             <tr>
+              <td>t</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <table class="sub-table" style="width: 100%;">
+            <tr>
+              <td rowspan="2" style="text-align:left; width:80px; vertical-align: top;">เหตุผล</td>
+              <td style="text-align:left;">t</td>              
+            </tr>
+            <tr>
+              <td>t</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <table class="sub-table" style="width: 100%;">
+            <tr>
+              <td style="text-align:left; width:80px; vertical-align: top;">เอกสารประกอบ <br>(ถ้ามี)</td>
+              <td style="text-align:left; vertical-align: top;">t</td>              
+            </tr>            
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <table class="sub-table" style="width: 100%;">
+            <tr>
+              <td style="text-align:left; width:80px; vertical-align: top;">ผู้เกี่ยวข้อง</td>
+              <td style="text-align:left; vertical-align: top;">t</td>              
+            </tr>            
+          </table>
+        </td>
+      </tr>
+      <!-- ------------------------ ส่วนที่ 2 สำหรับประเมินผล ---------------- -->
+      <tr>
+        <td>
+          <table class="sub-table" style="width: 100%;">
+            <tr>
+              <td>ส่วนที่ 2 สำหรับประเมินผลกระทบ</td>
+            </tr>
+          </table>
+        </td>
+      </tr> 
+      <tr>
+        <td>
+          <table class="sub-table" style="width: 100%;">
+            <tr>
+              <td style="text-align:left; width:80px; vertical-align: top;">ประเภท</td>
+              <td style="text-align:left; vertical-align: top;">t</td>              
+            </tr>            
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <table class="sub-table" style="width: 100%;">
+            <tr>
+              <td style="text-align:left; width:80px; vertical-align: top;">ระบบที่เกี่ยวข้อง</td>
+              <td style="text-align:left; vertical-align: top;">t</td>              
+            </tr>            
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <table class="sub-table" style="width: 100%;">
+            <tr>
+              <td style="text-align:left; width:130px; vertical-align: top;">สภาพแวดล้อมที่มีผลกระทบ</td>
+              <td style="text-align:left; vertical-align: top;">t</td>              
+            </tr>            
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <table class="sub-table" style="width: 100%;">
+            <tr>
+              <td style="text-align:left; width:80px; vertical-align: top;">ส่งผลกระทบ<br>ต่อระบบ</td>
+              <td style="text-align:left; vertical-align: top;">t</td>              
+            </tr>            
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <table class="sub-table" style="width: 100%;">
+            <tr>
+              <td style="text-align:left; width:80px; vertical-align: top;">ระดับผลระบบ</td>
+              <td style="text-align:left; vertical-align: top;">t</td>              
+            </tr>            
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <table class="sub-table" style="width: 100%;">
+            <tr>
+              <td style="text-align:left; width:90px; vertical-align: top;">ช่วงวันที่ดำเนินการ</td>
+              <td style="text-align:left; width:90px;">21 พฤศจิกายน 2568</td>    
+              <td style="text-align:left; width:20px;">ถึง</td>
+              <td style="text-align:left; width:90px;">21 พฤศจิกายน 2568</td>
+              <td style="text-align:left; width:50px; vertical-align: top;">เวลา</td>
+              <td style="text-align:left; width:60px;">23.00</td>    
+              <td style="text-align:left; width:20px;">ถึง</td>
+              <td style="text-align:left; width:60px;">23.00</td>          
+            </tr>            
+          </table>
+        </td>
+      </tr>
+      <!-- ------------------------ ลงนามเจ้าหน้าที่ ---------------- -->
+      <tr>
+        <td>
+          <table class="sub-table" style="width: 100%;">
+            <tr>
+              <td>ส่วนที่ 2 สำหรับประเมินผลกระทบ</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <table class="sub-table" style="width: 100%;">
+            <tr>
+              <td style="text-align: center; width: 50%;">
+                <div>ผู้ร้องขอการเปลี่ยนแปลงแก้ไขระบบ</div>
+                <div>ลงชื่อ .........................................................</div>
+                <div>(.............................................................)</div>
+                <div>ตำแหน่ง.........................................................</div>
+                <div> 21 / พฤศจิกายน / 2568</div>
+              </td>
+              <td style="text-align: center; width: 50%;">
+                <div>หัวหน้า / ผู้ได้รับมอบหมาย</div>
+                 <div>ลงชื่อ .........................................................</div>
+                <div>(.............................................................)</div>
+                <div>ตำแหน่ง.........................................................</div>
+                <div> 21 / พฤศจิกายน / 2568</div>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+
+    
+
+    <div style="margin-top: 4mm; font-size: 14px;">
+      หมายเหตุ: หน้าต่อไปเป็นข้อมูลต่อเนื่องจากตารางนี้
+    </div>
+  </div>
+
+  <!------------------------------- หน้า 2 --------------------------------->
+  <div class="page page-break">
+    <div class="report-title">รายงานสรุปเงินเดือนบุคลากร</div>
+    <div class="report-subtitle">ประจำเดือน พฤศจิกายน 2568 (หน้า 2/2)</div>
+
+    <div class="meta-row">
+      <div>หน่วยงาน: ศูนย์เทคโนโลยีสารสนเทศและการสื่อสาร</div>
+      <div>วันที่พิมพ์: 01/11/2568</div>
+    </div>
+
+    <table>
+      <thead>
+        <!-- ซ้ำ header เพื่อให้คนอ่านเข้าใจได้แม้เปิดหน้า 2 เดี่ยว ๆ -->
+        <tr>
+          <th rowspan="2" style="width: 5%;">ลำดับ</th>
+          <th rowspan="2" style="width: 18%;">ชื่อ - สกุล</th>
+          <th rowspan="2" style="width: 18%;">ตำแหน่ง</th>
+          <th colspan="2" style="width: 22%;">หน่วยงาน</th>
+          <th colspan="3" style="width: 27%;">รายละเอียดการจ่าย</th>
+          <th rowspan="2" style="width: 10%;">หมายเหตุ</th>
+        </tr>
+        <tr>
+          <th>ฝ่าย/กลุ่ม</th>
+          <th>กอง/สำนัก</th>
+          <th>เงินเดือน</th>
+          <th>เงินเพิ่ม</th>
+          <th>ภาษี</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- แถวหน้า 2: ต่อเนื่องจากหน้า 1 -->
+        <tr>
+          <td class="text-center">4</td>
+          <td>นาย สมชาย ดีพร้อม</td>
+          <td>เจ้าพนักงานธุรการชำนาญงาน</td>
+          <td>ฝ่ายธุรการ</td>
+          <td>กองคลังและงบประมาณ</td>
+          <td class="text-right">27,000.00</td>
+          <td class="text-right">2,700.00</td>
+          <td class="text-right">900.00</td>
+          <td class="small"></td>
+        </tr>
+        <!-- ... เพิ่มแถวตามต้องการ ... -->
+      </tbody>
+      <tfoot>
+        <!-- สรุปท้ายรายงานทั้งชุด -->
+        <tr>
+          <td colspan="5" class="text-right">รวมทั้งสิ้น (ทุกหน้า)</td>
+          <td class="text-right">133,500.00</td>
+          <td class="text-right">13,350.00</td>
+          <td class="text-right">3,650.00</td>
+          <td></td>
+        </tr>
+      </tfoot>
+    </table>
+
+    <div class="signature-section">
+      <div class="signature-box">
+        <div class="signature-line"></div>
+        <div class="signature-label">ผู้จัดทำรายงาน</div>
+        <div class="signature-label small">(ลงชื่อ)</div>
+      </div>
+      <div class="signature-box">
+        <div class="signature-line"></div>
+        <div class="signature-label">ผู้อนุมัติ</div>
+        <div class="signature-label small">(ลงชื่อ)</div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
