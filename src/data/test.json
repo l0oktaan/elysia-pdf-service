@@ -1,0 +1,33 @@
+{
+    "data": {
+        "id": 5024,
+        "user_id": 14,
+        "user_name": "songwut.saj",
+        "fullname": "ทรงวุฒิ สัจจบุตร",
+        "group_id": 1,
+        "group_code": "SDG1",
+        "year": 2568,
+        "order_no": 48,
+        "created_date": "2025-11-20 14:04:00",
+        "request_no": "SDG1-2568/048",
+        "change_type": 1,
+        "request_title": "ขอเพิ่ม CPU Memory ของเครื่อง VM ระบบ GDG ชั่วคราว",
+        "request_reason": "ให้ Resource เท่ากับเครื่อง Production สำหรับทดสอบ Stress Test ของระบบ",
+        "document_relate": "[]",
+        "person_relate": "[\"บ.ยิบอินซอย\"]",
+        "system_relate": "[{\"value\":9,\"text\":\"อื่น ๆ รายละเอียด\"},\"Private Cloud\"]",
+        "env_impact": "[2]",
+        "system_impact": "[\"GDG\"]",
+        "level_impact": 1,
+        "begin_date": "2025-11-20",
+        "end_date": "2025-12-15",
+        "begin_time": null,
+        "end_time": null,
+        "status": 2,
+        "description": null,
+        "alert_expire": null,
+        "detail_type": 1,
+        "camunda_id": null,
+        "updated_date": "2025-11-20 14:07:00"
+    }
+}
