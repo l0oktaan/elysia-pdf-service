@@ -35,6 +35,8 @@
 import { Elysia } from 'elysia'
 import { swagger } from '@elysiajs/swagger'
 import { staticPlugin } from '@elysiajs/static'
+import { createPdf } from './pdf'
+import type { ReportData } from './types/report'
 
 const app = new Elysia()
   .use(swagger())
@@ -45,6 +47,33 @@ const app = new Elysia()
   .get('/', () => ({
     message: 'PDF Service'
   }))
+  .post('/api/pdf/report', async ({ body }) => {
+    const data = body as ReportData
+
+    try {
+      const pdfBuffer = await createPdf(data)
+
+      // ✅ ส่งกลับเป็น Response ของ PDF
+      return new Response(pdfBuffer, {
+        status: 200,
+        headers: {
+          'Content-Type': 'application/pdf',
+          // inline = เปิดใน browser, attachment = ให้ดาวน์โหลด
+          'Content-Disposition': 'inline; filename="report.pdf"',
+        },
+      })
+    } catch (err) {
+      console.error('PDF error:', err)
+
+      return new Response(
+        JSON.stringify({ message: 'Failed to generate PDF' }),
+        {
+          status: 500,
+          headers: { 'Content-Type': 'application/json' },
+        }
+      )
+    }
+  })
   .listen(3000)
 
 console.log("Service running at http://localhost:3000")
