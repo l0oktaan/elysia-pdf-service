@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="th">
+
 <head>
   <meta charset="utf-8" />
-  <title>รายงานสรุปเงินเดือนบุคลากร (2 หน้า)</title>
+  <title>FM-ISWT-010</title>
   <style>
-    html, body {
+    html,
+    body {
       margin: 0;
       padding: 0;
       background: #ccc;
     }
+
     @font-face {
       font-family: 'THSarabunNew';
       src: url('fonts/THSarabunNew.ttf') format('truetype');
@@ -16,12 +19,14 @@
 
     /* กล่องจำลองกระดาษ A4 */
     .page {
-      width: 794px;           /* A4 @ 96dpi */
-      min-height: 1120px;     /* A4 @ 96dpi */
+      width: 794px;
+      /* A4 @ 96dpi */
+      min-height: 1120px;
+      /* A4 @ 96dpi */
       margin: 10px auto;
       padding: 10mm 15mm 10mm 15mm;
       background: #fff;
-      box-shadow: 0 0 5px rgba(0,0,0,0.5);
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
       box-sizing: border-box;
       position: relative;
       font-family: "THSarabunNew", Tahoma, sans-serif;
@@ -37,13 +42,25 @@
       body {
         background: #fff;
       }
-      .page {
+
+      /* .page {
         margin: 0;
         box-shadow: none;
         width: auto;
         min-height: auto;
         page-break-after: always;
+      } */
+      .page {
+        width: 210mm;
+        min-height: 297mm;
+        margin: 0;
+        padding: 10mm 15mm 10mm 15mm;
+        /* เผื่อขอบในกระดาษเอง */
+        box-shadow: none;
+        page-break-after: always;
+        box-sizing: border-box;
       }
+
       .page:last-child {
         page-break-after: auto;
       }
@@ -55,11 +72,30 @@
       font-weight: normal;
       margin-bottom: 4mm;
     }
-    .report-title {
+    .report-footer {
       text-align: center;
       font-size: 18px;
-      font-weight: bold;
+      font-weight: normal;
       margin-bottom: 4mm;
+    }
+
+    .tb-report-header tr > td {
+      padding: 0;
+      line-height: 1;
+      height: 5mm;
+      vertical-align:middle;
+    }
+
+    .tb-report-header tr {
+      height: auto;
+    }
+
+    .report-title {
+      text-align: center;
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 0mm;
+      margin-top: 20px;
     }
 
     .report-subtitle {
@@ -103,9 +139,17 @@
       background: #f9f9f9;
     }
 
-    .text-center { text-align: center; }
-    .text-right { text-align: right; }
-    .small { font-size: 13px; }
+    .text-center {
+      text-align: center;
+    }
+
+    .text-right {
+      text-align: right;
+    }
+
+    .small {
+      font-size: 13px;
+    }
 
     .signature-section {
       margin-top: 10mm;
@@ -130,54 +174,67 @@
     .signature-label {
       margin-top: 3mm;
     }
-    .my-table td {    
+
+    .my-table td {
       padding: 0;
       margin-left: 2px;
 
       border: none;
       vertical-align: middle;
     }
+
     .sub-table td {
-      padding: 3px 2px 0px 5px;  
+      padding: 3px 2px 0px 5px;
       border: 1px solid #000;
     }
+
     .gray {
       background-color: #cecece;
       font-weight: bold;
     }
-    .bold{
+
+    .bold {
       font-weight: bold;
     }
   </style>
 </head>
+
 <body>
 
   <!-- หน้า 1 -->
   <div class="page">
     <div class="report-header">ใช้ภายในกรมบัญชีกลางเท่านั้น</div>
-    <table style="border: none;">
+    <table style="border: none;" class="tb-report-header">
       <tr>
-        <td style="width: 20mm; border: none;" rowspan="2"><img src="images/cgd.svg" alt="Logo" style="height: 60px;"></td>
-        <td style="width: 30mm; border: none; text-align: right;">หมายเลขเอกสาร :</td>        
-        
+        <td style="width: 20mm; border: none;" rowspan="2"><img src="images/cgd.svg" alt="Logo" style="height: 60px;">
+        </td>
+        <td style="width: 30mm; border: none; text-align: right;">หมายเลขเอกสาร :&nbsp;</td>
+
         <td style="border: none;">FM-ISWT-010 </td>
-        <td style="width: 20mm;border: none;">เวอร์ชัน :  7.0 </td>
+        <td style="width: 20mm;border: none;">เวอร์ชัน : 7.0 </td>
       </tr>
-      <tr>       
-        <td style="text-align: right;border: none;">ชื่อเอกสาร :</td>
+      <tr>
+        <td style="text-align: right;border: none;">ชื่อเอกสาร :&nbsp;</td>
         <td colspan="2" style="border: none;">แบบฟอร์มการร้องขอการเปลี่ยนแปลงหรือแก้ไขระบบ (Request for Change) </td>
       </tr>
     </table>
-    <hr style="border: 0.1px solid #000; width: 100%; margin-top: 10px; margin-bottom: 15px;" />
+    <hr style="
+        width: 100%;
+        border: 0;
+        border-top: 2px solid #000;
+        transform: scaleY(0.5);
+        transform-origin: top;
+        margin: 5px 0px 10px 0px;
+      ">
     <div class="report-title">แบบบันทึกการร้องขอการเปลี่ยนแปลงหรือแก้ไขระบบ (Request for Change)</div>
-    
+
     <table class="my-table" style="width: 100%; border: none;">
       <tr>
         <td>
           <table class="sub-table" style="width: 100%;">
             <tr>
               <td style="text-align:left; width:100px;" class="gray">วันที่ขอดำเนินการ</td>
-              <td style="text-align:left; width:250px;"></td>
+              <td style="text-align:left; width:200px;"></td>
               <td style="text-align:left; width:100px;" class="gray">เลขที่ใบคำขอ</td>
               <td style="text-align:left;"></td>
             </tr>
@@ -198,9 +255,9 @@
           <table class="sub-table" style="width: 100%;">
             <tr>
               <td style="text-align:left; width:90px;" class="gray">ชื่อ-นามสกุล</td>
-              <td style="text-align:left; width:220px;"></td>
-              <td style="text-align:left; width:55px;" class="gray">หน่วยงาน</td>
-              <td style="text-align:left; width:170px;"></td>
+              <td style="text-align:left; width:210px;"></td>
+              <td style="text-align:left; width:52px;" class="gray">กลุ่มงาน</td>
+              <td style="text-align:left; width:180px;"></td>
               <td style="text-align:left; width:25px;" class="gray">โทร.</td>
               <td></td>
             </tr>
@@ -221,25 +278,25 @@
           <table class="sub-table" style="width: 100%;">
             <tr>
               <td style="text-align:left; width:90px;" class="bold">เรื่อง</td>
-              <td style="text-align:left;"></td>              
+              <td style="text-align:left;"></td>
             </tr>
           </table>
         </td>
       </tr>
-       <tr>
+      <tr>
         <td>
           <table class="sub-table" style="width: 100%;">
             <tr>
               <td rowspan="4" style="text-align:left; width:90px; vertical-align: top;" class="bold">รายละเอียด</td>
-              <td style="text-align:left;">&nbsp</td>              
+              <td style="text-align:left;">&nbsp</td>
             </tr>
             <tr>
               <td>&nbsp</td>
             </tr>
-             <tr>
+            <tr>
               <td>&nbsp</td>
             </tr>
-             <tr>
+            <tr>
               <td>&nbsp</td>
             </tr>
           </table>
@@ -250,7 +307,7 @@
           <table class="sub-table" style="width: 100%;">
             <tr>
               <td rowspan="2" style="text-align:left; width:90px; vertical-align: top;" class="bold">เหตุผล</td>
-              <td style="text-align:left;">&nbsp</td>              
+              <td style="text-align:left;">&nbsp</td>
             </tr>
             <tr>
               <td>&nbsp</td>
@@ -263,8 +320,8 @@
           <table class="sub-table" style="width: 100%;">
             <tr>
               <td style="text-align:left; width:90px; vertical-align: top;" class="bold">เอกสารประกอบ <br>(ถ้ามี)</td>
-              <td style="text-align:left; vertical-align: top;"></td>              
-            </tr>            
+              <td style="text-align:left; vertical-align: top;"></td>
+            </tr>
           </table>
         </td>
       </tr>
@@ -273,8 +330,8 @@
           <table class="sub-table" style="width: 100%;">
             <tr>
               <td style="text-align:left; width:90px; vertical-align: top;" class="bold">ผู้เกี่ยวข้อง</td>
-              <td style="text-align:left; vertical-align: top;"></td>              
-            </tr>            
+              <td style="text-align:left; vertical-align: top;"></td>
+            </tr>
           </table>
         </td>
       </tr>
@@ -287,14 +344,14 @@
             </tr>
           </table>
         </td>
-      </tr> 
+      </tr>
       <tr>
         <td>
           <table class="sub-table" style="width: 100%;">
             <tr>
               <td style="text-align:left; width:90px; vertical-align: top;" class="bold">ประเภท</td>
-              <td style="text-align:left; vertical-align: top;"></td>              
-            </tr>            
+              <td style="text-align:left; vertical-align: top;"></td>
+            </tr>
           </table>
         </td>
       </tr>
@@ -303,8 +360,8 @@
           <table class="sub-table" style="width: 100%;">
             <tr>
               <td style="text-align:left; width:90px; vertical-align: top;" class="bold">ระบบที่เกี่ยวข้อง</td>
-              <td style="text-align:left; vertical-align: top;"></td>              
-            </tr>            
+              <td style="text-align:left; vertical-align: top;"></td>
+            </tr>
           </table>
         </td>
       </tr>
@@ -313,8 +370,8 @@
           <table class="sub-table" style="width: 100%;">
             <tr>
               <td style="text-align:left; width:150px; vertical-align: top;" class="bold">สภาพแวดล้อมที่มีผลกระทบ</td>
-              <td style="text-align:left; vertical-align: top;"></td>              
-            </tr>            
+              <td style="text-align:left; vertical-align: top;"></td>
+            </tr>
           </table>
         </td>
       </tr>
@@ -323,8 +380,8 @@
           <table class="sub-table" style="width: 100%;">
             <tr>
               <td style="text-align:left; width:90px; vertical-align: top;" class="bold">ส่งผลกระทบ<br>ต่อระบบ</td>
-              <td style="text-align:left; vertical-align: top;"></td>              
-            </tr>            
+              <td style="text-align:left; vertical-align: top;"></td>
+            </tr>
           </table>
         </td>
       </tr>
@@ -333,8 +390,8 @@
           <table class="sub-table" style="width: 100%;">
             <tr>
               <td style="text-align:left; width:90px; vertical-align: top;" class="bold">ระดับผลระบบ</td>
-              <td style="text-align:left; vertical-align: top;"></td>              
-            </tr>            
+              <td style="text-align:left; vertical-align: top;"></td>
+            </tr>
           </table>
         </td>
       </tr>
@@ -343,14 +400,14 @@
           <table class="sub-table" style="width: 100%;">
             <tr>
               <td style="text-align:left; width:80px; vertical-align: top;" class="bold">ช่วงวันที่ดำเนินการ</td>
-              <td style="text-align:left; width:100px;"></td>    
+              <td style="text-align:left; width:100px;"></td>
               <td style="text-align:center; width:20px;" class="bold">ถึง</td>
               <td style="text-align:left; width:100px;"></td>
               <td style="text-align:center; width:20px; vertical-align: top;" class="bold">เวลา</td>
-              <td style="text-align:left; width:60px;"></td>    
+              <td style="text-align:left; width:60px;"></td>
               <td style="text-align:center; width:20px;" class="bold">ถึง</td>
-              <td style="text-align:left; width:60px;"></td>          
-            </tr>            
+              <td style="text-align:left; width:60px;"></td>
+            </tr>
           </table>
         </td>
       </tr>
@@ -377,7 +434,7 @@
               </td>
               <td style="text-align: center; width: 50%;">
                 <div>หัวหน้า / ผู้ได้รับมอบหมาย</div>
-                 <div>ลงชื่อ .........................................................</div>
+                <div>ลงชื่อ .........................................................</div>
                 <div>(.............................................................)</div>
                 <div>ตำแหน่ง.........................................................</div>
                 <div> 21 / พฤศจิกายน / 2568</div>
@@ -388,36 +445,45 @@
       </tr>
     </table>
 
-    
 
-    
+    <div class="report-footer">หน้า 1/2</div>
+
   </div>
 
   <!------------------------------- หน้า 2 --------------------------------->
   <div class="page page-break">
     <div class="report-header">ใช้ภายในกรมบัญชีกลางเท่านั้น</div>
-    <table style="border: none;">
+    <table style="border: none;" class="tb-report-header">
       <tr>
-        <td style="width: 20mm; border: none;" rowspan="2"><img src="images/cgd.svg" alt="Logo" style="height: 60px;"></td>
-        <td style="width: 30mm; border: none; text-align: right;">หมายเลขเอกสาร :</td>        
-        
+        <td style="width: 20mm; border: none;" rowspan="2"><img src="images/cgd.svg" alt="Logo" style="height: 60px;">
+        </td>
+        <td style="width: 30mm; border: none; text-align: right;">หมายเลขเอกสาร :&nbsp;</td>
+
         <td style="border: none;">FM-ISWT-010 </td>
-        <td style="width: 20mm;border: none;">เวอร์ชัน :  7.0 </td>
+        <td style="width: 20mm;border: none;">เวอร์ชัน : 7.0 </td>
       </tr>
-      <tr>       
-        <td style="text-align: right;border: none;">ชื่อเอกสาร :</td>
+      <tr>
+        <td style="text-align: right;border: none;">ชื่อเอกสาร : &nbsp;</td>
         <td colspan="2" style="border: none;">แบบฟอร์มการร้องขอการเปลี่ยนแปลงหรือแก้ไขระบบ (Request for Change) </td>
       </tr>
     </table>
-    <hr style="border: 0.1px solid #000; width: 100%; margin-top: 10px; margin-bottom: 15px;" />
-    
+    <hr style="
+        width: 100%;
+        border: 0;
+        border-top: 2px solid #000;
+        transform: scaleY(0.5);
+        transform-origin: top;
+        margin: 5px 0px 10px 0px;
+      ">
     <table class="sub-table" style="width: 100%; ">
       <tr>
         <td colspan="2" class="gray">ส่วนที่ 3</td>
       </tr>
-      <tr>        
-        <td style="text-align:left; width:52%;" class="gray">สำหรับผู้ตรวจสอบการขอเปลี่ยนแปลงหรือแก้ไข<br>(กลุ่มงานรักษาความปลอดภัยด้านสารสนเทศ)</td>
-        <td style="text-align:left; width:48%;" class="gray">สำหรับผู้อำนวยการศูนย์เทคโนโลยีสารสนเทศและการสื่อสาร<br>หรือผู้ที่ได้รับมอบหมาย</td>
+      <tr>
+        <td style="text-align:left; width:52%;" class="gray">
+          สำหรับผู้ตรวจสอบการขอเปลี่ยนแปลงหรือแก้ไข<br>(กลุ่มงานรักษาความปลอดภัยด้านสารสนเทศ)</td>
+        <td style="text-align:left; width:48%;" class="gray">
+          สำหรับผู้อำนวยการศูนย์เทคโนโลยีสารสนเทศและการสื่อสาร<br>หรือผู้ที่ได้รับมอบหมาย</td>
       </tr>
       <tr>
         <td>
@@ -480,7 +546,7 @@
         </td>
         <td style="text-align: center;">
           <div>ผู้อนุมัติ</div>
-            <div>ลงชื่อ .........................................................</div>
+          <div>ลงชื่อ .........................................................</div>
           <div>(.............................................................)</div>
           <div>ตำแหน่ง.........................................................</div>
           <div> 21 / พฤศจิกายน / 2568</div>
@@ -493,7 +559,7 @@
         <td style="text-align: left;">
           <div>ผลการดำเนินการ</div>
           <input type="radio" name="gender" value="male"> ดำเนินการแล้ว วันที่<br>
-          ผู้ดำเนินการ          
+          ผู้ดำเนินการ
           <br><input type="radio" name="gender" value="male"> ไม่สามารถดำเนินการได้<br>
           รายละเอียด<br>
           <hr style="
@@ -513,7 +579,7 @@
         </td>
         <td style="text-align: center; vertical-align: middle;">
           <div>ผู้ควบคุมการดาเนินการ</div>
-            <div>ลงชื่อ .........................................................</div>
+          <div>ลงชื่อ .........................................................</div>
           <div>(.............................................................)</div>
           <div>ตำแหน่ง.........................................................</div>
           <div> 21 / พฤศจิกายน / 2568</div>
@@ -537,7 +603,7 @@
             transform: scaleY(0.5);
             transform-origin: top;
             margin: 20px 3px 3px 5px;
-          ">          
+          ">
         </td>
         <td>
           การตรวจสอบผลการเปลี่ยนแปลงหรือแก้ไข<br>
@@ -546,7 +612,7 @@
             <input type="radio" name="gender" value="female"> ไม่สามารถตรวจสอบได้
           </div>
           รายละเอียด<br>
-          
+
           <hr style="
             border: 0;
             border-top: 1px solid #000;
@@ -557,7 +623,7 @@
         </td>
       </tr>
       <tr>
-        <td style="text-align: center;">
+        <td style=" text-align: center;">
           <div>ผู้ร้องขอ/ติดตาม</div>
           <div>ลงชื่อ .........................................................</div>
           <div>(.............................................................)</div>
@@ -566,13 +632,15 @@
         </td>
         <td style="text-align: center;">
           <div>ผู้ตรวจสอบ</div>
-            <div>ลงชื่อ .........................................................</div>
+          <div>ลงชื่อ .........................................................</div>
           <div>(.............................................................)</div>
           <div>ตำแหน่ง.........................................................</div>
           <div> 21 / พฤศจิกายน / 2568</div>
         </td>
       </tr>
-    </table>    
+    </table>
+    <div class="report-footer">หน้า 2/2</div>
   </div>
 </body>
+
 </html>
