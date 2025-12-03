@@ -35,8 +35,11 @@
 import { Elysia } from 'elysia'
 import { swagger } from '@elysiajs/swagger'
 import { staticPlugin } from '@elysiajs/static'
-import { createPdf } from './pdf'
+import { PDFService  } from './pdf'
 import type { ReportData } from './types/report'
+// import { PDFService } from './types/service';
+
+const pdfService = new PDFService();
 
 const app = new Elysia()
   .use(swagger())
@@ -44,6 +47,9 @@ const app = new Elysia()
     assets: 'design',   // โฟลเดอร์ที่เก็บไฟล์ html
     prefix: '/design',  // URL prefix
   }))
+
+  
+
   .get('/', () => ({
     message: 'PDF Service'
   }))
@@ -51,7 +57,7 @@ const app = new Elysia()
     const data = body as ReportData
 
     try {
-      const pdfBuffer = await createPdf(data)
+      const pdfBuffer = await pdfService.createPdf(data)
 
       // ✅ ส่งกลับเป็น Response ของ PDF
       return new Response(pdfBuffer, {

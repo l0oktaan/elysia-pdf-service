@@ -19,7 +19,7 @@ export interface ReportData {
 
 
 
-export function renderReportHtml(data: ReportData): string {
+export function renderReportHtml(data: ReportData, fontBase64: string, logoBase64: string): string {
 
 
 
@@ -38,13 +38,13 @@ export function renderReportHtml(data: ReportData): string {
     }
     @font-face {
       font-family: 'THSarabunNew';
-      src: url('file:///D:/code/elysia-pdf-service/design/fonts/THSarabunNew.ttf') format('truetype');
+      src: url('${fontBase64}') format('truetype');
       font-weight: normal;
       font-style: normal;
     }
     @font-face {
       font-family: 'THSarabunNew';
-      src: url('file:///D:/code/elysia-pdf-service/design/fonts/THSarabunNew Bold.ttf') format('truetype');
+      src: url(''${fontBase64}'') format('truetype');
       font-weight: bold;
       font-style: normal;
     }
@@ -192,7 +192,7 @@ export function renderReportHtml(data: ReportData): string {
     <div class="report-header">ใช้ภายในกรมบัญชีกลางเท่านั้น</div>
     <table style="border: none;">
       <tr>
-        <td style="width: 20mm; border: none;" rowspan="2"><img src="images/cgd.svg" alt="Logo" style="height: 60px;"></td>
+        <td style="width: 20mm; border: none;" rowspan="2"><img src="${logoBase64}" alt="Logo" style="height: 60px;"></td>
         <td style="width: 30mm; border: none; text-align: right;">หมายเลขเอกสาร :</td>        
         
         <td style="border: none;">FM-ISWT-010 </td>
@@ -433,7 +433,7 @@ export function renderReportHtml(data: ReportData): string {
     <div class="report-header">ใช้ภายในกรมบัญชีกลางเท่านั้น</div>
     <table style="border: none;">
       <tr>
-        <td style="width: 20mm; border: none;" rowspan="2"><img src="images/cgd.svg" alt="Logo" style="height: 60px;"></td>
+        <td style="width: 20mm; border: none;" rowspan="2"><img src="${logoBase64}" alt="Logo" style="height: 60px;"></td>
         <td style="width: 30mm; border: none; text-align: right;">หมายเลขเอกสาร :</td>        
         
         <td style="border: none;">FM-ISWT-010 </td>
